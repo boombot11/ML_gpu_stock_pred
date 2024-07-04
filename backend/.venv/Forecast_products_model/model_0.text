@@ -1,0 +1,21 @@
+for epoch in range(100):
+    for batch_idx, (data, targets) in enumerate(train_loader):
+        optimizer.zero_grad()
+        data.requires_grad=True
+        targets.requires_grad=True
+        outputs = model(data)
+        targets.requires_grad=True
+        #temp=torch.tensor(outputs,dtype=torch.float32)
+        #temp=temp.type(torch.LongTensor)
+      #  print(targets.squeeze(2))
+       # print(outputs.squeeze(2))
+        loss = criterion(outputs.squeeze(2), targets.squeeze(2))
+        #print(data)
+        print(targets)
+        print(outputs)
+        print(loss)
+        print('sadadsad')
+        loss.backward()
+        optimizer.step()
+
+

@@ -1,0 +1,45 @@
+.Card-Container{
+    display: flex;
+    flex-direction: row;
+    gap: 4vh;
+}
+#icon{
+    position: relative;
+    opacity: 0;
+    left: 40%;
+    bottom: 50%;
+    transition: all ease-in 0.4s;
+}
+
+.Card {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    background-color: rgb(223, 231, 238);
+    opacity: 1;
+    border: black solid 2px;
+    transition: all ease-in 0.4s;
+}
+
+
+.Card p{
+    opacity: 1;
+    transition: all ease-in 0.4s;
+    padding: 9px;
+    font-size: 17px;
+}
+
+
+.Card:first-child{
+    font-size: 25px;
+}
+.Card:hover {
+    transform: scale(1.02);
+     p{
+     opacity: 0.1;
+    }
+     #icon{
+    opacity: 1;
+    cursor:pointer;
+     }
+}

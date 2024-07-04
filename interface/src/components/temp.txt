@@ -1,0 +1,48 @@
+
+   <div className="form__group field ">
+   <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+   <label for="name" class="form__label">Name</label>
+
+useEffect(()=>{
+    const input_data = [1,114040,2023,8,128,1925,2250,3840,120,48,2,1,0,406,1506,20106];
+    fetch('http://localhost:5000/pred', {
+  method: 'POST',
+  headers: {
+    'Access-Control-Allow-Origin':'*',
+    'content-type':'application/json'
+  },
+  body:JSON.stringify(
+    {
+      'data':input_data,
+      'test':'test'
+    }
+  )
+})
+.then(response =>{console.log(response);return response.json()})
+.then(data => {
+  // Extract the prediction from the response
+    text=data['value'];
+    setdata(text)
+  // Display the prediction on the frontend
+  console.log(`Prediction: ${data['value']}`);
+})
+.catch(error => {
+  // Handle any errors that occur during the request
+  console.error(error);
+});
+},[])
+  return <>
+ <div>{data}+"ddsda</div>
+  </>    
+
+
+  const p=document.getElementById(`${parameter}`)
+    const c=document.getElementById(`${parameter}-content`)
+    c.innerHTML=''
+    var i=0
+    for(var a=0;a<options[parameter-1].length;a++){
+     const temp=document.createElement('a')
+     temp.className=`${parameter}`
+     temp.textContent=options[parameter][a]
+    c.appendChild(temp)
+    }

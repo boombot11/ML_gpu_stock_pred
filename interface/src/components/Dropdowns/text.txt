@@ -1,0 +1,27 @@
+const data=await  fetch('/api/', {
+    method: 'GET',
+    headers: {
+      'Access-Control-Allow-Origin':'*',
+      'content-type':'application/json'
+    },
+  })
+  const Value=await data.json();
+  console.log("checking :: ",Value.value)
+  return Value.value
+
+
+  
+  const data=await  fetch('http://localhost:5000/api/user/signup', {
+    method: 'POST',
+    headers: {
+      'Access-Control-Allow-Origin':'*',
+      'content-type':'application/json'
+    },
+      body:JSON.stringify(
+        {
+          'name':'sahilasdasd',
+          'email':'sahasdadail@gmail.com',
+          'password':'12asda34'
+        }
+      )
+  })
